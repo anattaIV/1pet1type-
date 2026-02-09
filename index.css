@@ -1,0 +1,178 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&family=SN+Pro:ital,wght@0,200..900;1,200..900&family=Zalando+Sans+Expanded:ital,wght@0,200..900;1,200..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+    background-color: rgb(0, 0, 0);
+}
+
+main {
+    position: relative;
+}
+
+img {
+    width: 250px;
+    border-radius: 20px;
+}
+
+.logo-img {
+    width: 105px;
+    border-radius: 5px;
+}
+
+.illustration {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    height: 100vh;
+    z-index: 0;
+}
+
+.yakor {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    background-color: black;
+    color: white;
+    font-size: 24px;
+    text-align: center;
+    border-radius: 50%;
+    z-index: 999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s, transform 0.2s;
+}
+
+.yakor:hover {
+    background-color: white;
+    color: black;
+    transform: scale(1.1);
+}
+
+.yakor:active {
+    background-color: rgb(80, 80, 80);
+    color: white;
+    transform: scale(0.95);
+}
+
+.ilus {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 0;
+    mask-image: linear-gradient(to bottom, rgba(0,0,0,0.8) 0%, rgba(0,0,0,1) 10%, rgba(0,0,0,1) 90%, rgba(0,0,0,0.8) 100%);
+    -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,0.8) 0%, rgba(0,0,0,1) 10%, rgba(0,0,0,1) 90%, rgba(0,0,0,0.8) 100%);
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 120px;
+    color: rgba(255, 255, 255, 0.666);
+    font-family: "Zalando Sans Expanded", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    font-size: small;
+    border: 1px solid rgba(0, 0, 0, 0);
+}
+
+.card-main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 20px;
+    align-items: center;
+    margin-bottom: 150px;
+}
+
+.card {
+    font-family: "Zalando Sans Expanded", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 12px;
+    align-items: center;
+    width: 350px;
+    background-color: rgb(0, 0, 0);
+    color: white;
+    border-radius: 44px;
+    border: 1px solid rgba(255, 255, 255, 0);
+    transition: 
+        border-color 1.5s ease, 
+        transform 0.8s cubic-bezier(0.2, 1, 0.36, 1);
+}
+
+.card:hover {
+    border-color: rgb(255, 255, 255);
+    transform: translateX(4px);
+}
+
+.price {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 300px;
+}
+
+.knop {
+    width: 100px;
+    height: 40px;
+    border-radius: 30px;
+    border: 1px solid transparent;
+    background-color: white;
+    color: black;
+    cursor: pointer;
+    transition:
+        background-color 0.3s ease,
+        color 0.3s ease,
+        border 0.3s ease,
+        border-radius 0.2s ease;
+}
+
+.knop:hover {
+    background-color: black;
+    color: white;
+    border: 1px solid black;
+}
+
+.knop:active {
+    color: white;
+    border-radius: 20px;
+    border: 1px solid white;
+}
+
+.text-area {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: nowrap;
+    margin-bottom: 500px;
+}
+
+.text {
+    display: flex;
+    flex-direction: column;
+    text-align: right;
+    color: white;
+    font-family: "Zalando Sans Expanded", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    font-size: small;
+    border: 1px solid white;
+    border-radius: 44px;
+    padding: 10px;
+}
+
+.text-img {
+    width: 300px;
+    border-radius: 50px;
+    mask-image: radial-gradient(circle, black 70%, transparent 100%);
+    -webkit-mask-image: radial-gradient(circle, black 70%, transparent 100%);
+}
