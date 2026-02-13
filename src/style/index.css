@@ -1,0 +1,362 @@
+@import url('https://fonts.googleapis.com/css2?family=Zalando+Sans+Expanded:wght@200..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: black;
+    font-family: "Zalando Sans Expanded", sans-serif;
+    color: white;
+}
+
+img {
+    width: 250px;
+    border-radius: 20px;
+}
+
+.logo-img {
+    width: 105px;
+    border-radius: 5px;
+    opacity: 0.8;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    height: 120px;
+    padding-left: 20px;
+    background-color: black;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.site-title {
+    color: white;
+    opacity: 0.6;
+}
+
+.hero-page {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row-reverse;
+    justify-content: space-around;
+    align-items: center;
+    margin: 50px 0 100px;
+    gap: 50px;
+}
+
+.hero-page-text {
+    display: flex;
+    flex-direction: column;
+    color: white;
+}
+
+.hero-page-zabiv {
+    border-radius: 100px;
+    width: 90%;
+    height: 900px;
+    background: black;
+    border: 2px dashed white;
+}
+
+.card-main {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-bottom: 150px;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    width: 350px;
+    background-color: black;
+    color: white;
+    border-radius: 44px;
+    position: relative;
+    transition: transform 0.8s cubic-bezier(0.2,1,0.36,1);
+    padding: 2px;
+}
+
+.card::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 44px;
+    padding: 2px;
+    background: linear-gradient(135deg, white, black, white);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    opacity: 0;
+    transition: opacity 1.5s ease;
+    pointer-events: none;
+}
+
+.card:hover {
+    transform: translateX(4px);
+}
+
+.card:hover::after {
+    opacity: 1;
+}
+
+.price {
+    display: flex;
+    justify-content: space-around;
+    width: 300px;
+}
+
+.knop {
+    width: 100px;
+    height: 40px;
+    border-radius: 30px;
+    border: 2px solid transparent;
+    background-color: black;
+    color: white;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.knop:hover {
+    background-color: white;
+    color: black;
+    border: 2px solid black;
+    transform: scale(1.05);
+}
+
+.knop:active {
+    border: 2px solid white;
+    background-color: black;
+    color: white;
+    transform: scale(0.98);
+}
+
+.text-area {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 500px;
+}
+
+.text {
+    border: 1px solid white;
+    border-radius: 44px;
+    padding: 15px;
+    text-align: right;
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    min-height: 300px;
+    background-color: black;
+    color: white;
+}
+
+.text-many {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    justify-content: space-between;
+}
+
+.text-many p:last-child {
+    font-weight: 700;
+    padding-top: 20px;
+    font-size: 1.1em;
+    letter-spacing: 0.5px;
+    margin-top: auto;
+}
+
+.text-img {
+    width: 300px;
+    border-radius: 50px;
+}
+
+footer {
+    padding: 20px 0;
+    background-color: black;
+}
+
+.foot-main {
+    display: flex;
+    align-items: flex-start;
+    gap: 40px;
+    padding: 20px;
+}
+
+.footer-right {
+    display: flex;
+    flex-direction: column;
+}
+
+.faq-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.faq-text {
+    color: white;
+    text-decoration: none;
+    transition: opacity 0.3s ease;
+}
+
+.faq-text:hover {
+    opacity: 0.7;
+}
+
+.name-footer {
+    color: white;
+    opacity: 0.6;
+    font-size: small;
+    margin-top: 10px;
+}
+
+.yakor {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: black;
+    color: white;
+    cursor: pointer;
+    border: 1px solid white;
+    font-size: 24px;
+    transition: all 0.3s ease;
+}
+
+.yakor:hover {
+    background-color: white;
+    color: black;
+    border: 1px solid black;
+}
+
+.main-grid {
+    border: 2px solid white;
+    background-color: black;
+    height: auto;
+    display: block;
+    padding: 40px 20px;
+    color: white;
+    text-align: center;
+    margin: 40px 20px;
+    border-radius: 60px;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 1s ease forwards;
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.grid-title, .grid-subtitle {
+    color: white;
+    opacity: 0;
+    animation: fadeIn 0.8s ease forwards;
+    animation-delay: 0.3s;
+}
+
+.grid-subtitle {
+    animation-delay: 0.5s;
+    opacity: 0.7;
+    margin-bottom: 30px;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 125px repeat(3, 50px);
+    gap: 10px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.grid > div span {
+    transition: opacity 0.3s ease;
+}
+
+.grid > div {
+    background-color: black;
+    color: white;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 500;
+    border: 2px solid transparent;
+    position: relative;
+    opacity: 0;
+    transform: scale(0.9);
+    animation: popIn 0.5s ease forwards;
+}
+
+.grid-item-1 { animation-delay: 0.1s; }
+.grid-item-2 { animation-delay: 0.2s; }
+.grid-item-3 { animation-delay: 0.3s; }
+.grid-item-4 { animation-delay: 0.4s; }
+.grid-item-5 { animation-delay: 0.5s; }
+.grid-item-6 { animation-delay: 0.6s; }
+.grid-item-7 { animation-delay: 0.7s; }
+.grid-item-8 { animation-delay: 0.8s; }
+.grid-item-9 { animation-delay: 0.9s; }
+.grid-item-10 { animation-delay: 1.0s; }
+.grid-item-11 { animation-delay: 1.1s; }
+.grid-item-12 { animation-delay: 1.2s; }
+
+@keyframes popIn {
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.grid > div:hover {
+    border: 2px solid transparent;
+}
+
+.grid > div:hover::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 20px;
+    padding: 2px;
+    background: linear-gradient(135deg, white, black, white);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+    animation: borderGlow 1.5s ease forwards;
+}
+
+@keyframes borderGlow {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
