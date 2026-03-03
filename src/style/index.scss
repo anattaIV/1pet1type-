@@ -1,0 +1,29 @@
+@use "./variables" as *;
+@use "./functions" as *;
+@use "./mixins" as *;
+@use "./buttons.scss";
+@use "./footer.scss";
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&family=SN+Pro:ital,wght@0,200..900;1,200..900&family=Zalando+Sans+Expanded:ital,wght@0,200..900;1,200..900&display=swap');
+
+@import "./animations.css";
+@import "./header.css";
+@import "./hero-page.css";
+@import "./content.css";
+@import "./modal.css";
+@import "./card.css";
+@import "./grid.css";
+@import "./textarea.css";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: $color-bg;
+  font-family: $font-main;
+  color: $color-text;
+}
+

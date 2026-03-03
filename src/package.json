@@ -6,13 +6,15 @@
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "tsc",
+    "build": "tsc && npm run build:css",
+    "build:css": "sass style/index.scss style/index.css",
     "watch": "tsc --watch"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "sass": "^1.81.0",
     "typescript": "^5.9.3"
   }
 }

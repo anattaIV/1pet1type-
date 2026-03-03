@@ -1,23 +1,226 @@
-@import url('https://fonts.googleapis.com/css2?family=Zalando+Sans+Expanded:wght@200..900&display=swap');
-@import './animations.css';
-@import './header.css';
-@import './hero-page.css';
-@import './content.css';
-@import './modal.css';
-@import './card.css';
-@import './grid.css';
-@import './textarea.css';
-@import './footer.css';
-@import './buttons.css';
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&family=SN+Pro:ital,wght@0,200..900;1,200..900&family=Zalando+Sans+Expanded:ital,wght@0,200..900;1,200..900&display=swap');
+@import "./animations.css";
+@import "./header.css";
+@import "./hero-page.css";
+@import "./content.css";
+@import "./modal.css";
+@import "./card.css";
+@import "./grid.css";
+@import "./textarea.css";
+.knop {
+  border-radius: 30px;
+  padding: 12px 18px;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+  width: 6.25rem;
+  height: 2.5rem;
+  border: 2px solid rgba(255, 255, 255, 0.08);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(0, 0, 0, 0.3) 100%);
+  margin-bottom: 5px;
+  box-shadow: inset 0 -2px 6px rgba(255, 255, 255, 0.02);
+}
+.knop:hover {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.18) 0%, rgba(0, 0, 0, 0.08) 100%);
+  border-color: rgb(255, 255, 255);
+  box-shadow: 0 10px 36px rgba(255, 255, 255, 0.22), inset 0 -2px 6px rgba(255, 255, 255, 0.03);
+  transform: scale(1.04);
+}
+.knop:active {
+  transform: scale(0.98);
+}
+
+.account-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 0;
+  transition: all 0.3s ease;
+  opacity: 1;
+  animation: slideInUp 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) 0.1s both;
+  border-radius: 50%;
+}
+.account-btn .account-icon {
+  width: 2rem;
+  height: 2rem;
+  filter: invert(1) brightness(1.1);
+  transition: all 0.3s ease;
+}
+.account-btn:hover {
+  opacity: 0.85;
+}
+.account-btn:hover .account-icon {
+  filter: invert(1) brightness(1.2) drop-shadow(0 0 10px rgba(255, 255, 255, 0.5));
+}
+
+.auth-submit {
+  border-radius: 30px;
+  padding: 14px 20px;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.05) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  margin-top: 10px;
+}
+.auth-submit:hover {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0.1) 100%);
+  border-color: rgba(255, 255, 255, 0.6);
+  box-shadow: 0 8px 24px rgba(255, 255, 255, 0.15);
+}
+.auth-submit:active {
+  transform: scale(0.98);
+}
+
+.support-form .auth-submit {
+  padding: 12px 20px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.02));
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+.support-form .auth-submit:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+.telegram-btn {
+  display: inline-block;
+  padding: 16px 24px;
+  color: #fff;
+  background: black;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  border-radius: 12px;
+  border: 2px solid transparent;
+  transition: background 0.3s ease, transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+.telegram-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  border-color: #fff;
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.6);
+  transform: scale(1.03);
+}
+.telegram-btn:active {
+  transform: scale(0.97);
+}
+
+footer {
+  padding: 20px 0;
+  background-color: #000;
+}
+
+.foot-main {
+  display: flex;
+  align-items: flex-start;
+  gap: 40px;
+  padding: 20px;
+}
+
+.footer-right {
+  display: flex;
+  flex-direction: column;
+}
+
+.faq-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.faq-text {
+  color: #fff;
+  text-decoration: none;
+  transition: opacity 0.3s ease;
+}
+.faq-text:hover {
+  opacity: 0.7;
+}
+
+.name-footer {
+  color: #fff;
+  opacity: 0.6;
+  font-size: 0.75rem;
+  margin-top: 10px;
+}
+
+.yakor {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: #0b0b0b;
+  backdrop-filter: blur(10px);
+  color: #fff;
+  cursor: pointer;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  font-size: 24px;
+  transition: all 0.3s ease;
+  animation: slideInUp 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) 0.6s both;
+}
+.yakor:hover {
+  background: rgba(0, 0, 0, 0.9);
+  border-color: rgba(255, 255, 255, 0.6);
+  box-shadow: 0 8px 24px rgba(255, 255, 255, 0.15);
+}
+
+.yakor-dummy {
+  position: fixed;
+  bottom: 90px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: #0b0b0b;
+  backdrop-filter: blur(10px);
+  color: #fff;
+  cursor: pointer;
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.24s ease;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6);
+}
+.yakor-dummy:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 34px rgba(255, 255, 255, 0.08);
+}
+
+.yakor-svg,
+.svg-arrow {
+  width: 18px;
+  height: 18px;
+  display: inline-block;
+  background: transparent;
+  filter: invert(1) brightness(3) contrast(1.2);
+}
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    background-color: black;
-    font-family: "Zalando Sans Expanded", sans-serif;
-    color: white;
+  background-color: #000;
+  font-family: "Zalando Sans Expanded", sans-serif;
+  color: #fff;
 }
+
+/*# sourceMappingURL=index.css.map */

@@ -1,0 +1,99 @@
+@use "./variables" as *;
+@use "./functions" as *;
+
+footer {
+  padding: 20px 0;
+  background-color: $color-bg;
+}
+
+.foot-main {
+  display: flex;
+  align-items: flex-start;
+  gap: 40px;
+  padding: 20px;
+}
+
+.footer-right {
+  display: flex;
+  flex-direction: column;
+}
+
+.faq-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.faq-text {
+  color: $color-text;
+  text-decoration: none;
+  transition: opacity $transition-normal;
+
+  &:hover {
+    opacity: 0.7;
+  }
+}
+
+.name-footer {
+  color: $color-text;
+  opacity: 0.6;
+  font-size: rem(12);
+  margin-top: 10px;
+}
+
+.yakor {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  border-radius: $radius-circle;
+  background: #0b0b0b;
+  backdrop-filter: blur(10px);
+  color: $color-text;
+  cursor: pointer;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  font-size: 24px;
+  transition: all $transition-normal;
+  animation: slideInUp 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) 0.6s both;
+
+  &:hover {
+    background: rgba(0, 0, 0, 0.9);
+    border-color: rgba(255, 255, 255, 0.6);
+    box-shadow: 0 8px 24px rgba(255, 255, 255, 0.15);
+  }
+}
+
+.yakor-dummy {
+  position: fixed;
+  bottom: 90px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  border-radius: $radius-circle;
+  background: #0b0b0b;
+  backdrop-filter: blur(10px);
+  color: $color-text;
+  cursor: pointer;
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.24s ease;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6);
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 34px rgba(255, 255, 255, 0.08);
+  }
+}
+
+.yakor-svg,
+.svg-arrow {
+  width: 18px;
+  height: 18px;
+  display: inline-block;
+  background: transparent;
+  filter: invert(1) brightness(3) contrast(1.2);
+}
+
