@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Zalando+Sans+Expanded:wght@200..900&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="./style/index.css">
+    <link rel="stylesheet" href="/style/index.css">
     <link rel="icon" href="./img/photo_2026-01-16 00.31.14.jpeg" type="image/jpeg">
 </head>
 
@@ -24,7 +24,7 @@
         </button>
     </header>
 
-    <main>
+    <main id="mainContent">
         <section class="hero-page">
             <div class="hero-page-text">
                 <h1>Deformatio Veritatis</h1>
@@ -183,8 +183,8 @@
             <h2>Authorization</h2>
             <form class="auth-form">
                 <div class="form-group">
-                    <label for="email">Email</label>
-                    <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                    <label for="email">Email or phone</label>
+                    <input type="text" id="email" name="email" placeholder="Enter email or phone" required>
                 </div>
                 <div class="form-group">
                     <label for="password">Password</label>
@@ -195,6 +195,126 @@
             </form>
         </div>
     </div>
+
+    <div class="modal" id="bannedModal">
+        <div class="modal-content">
+            <button class="modal-close" id="closeBannedModal">&times;</button>
+            <div class="banned-modal-body">
+                <img src="./img/ico/error.svg" alt="Error" class="status-icon status-icon--error">
+                <h2>Your account is banned</h2>
+                <p>If you believe this is a mistake, please contact support:</p>
+                <a href="https://t.me/saYaSupport" target="_blank" class="telegram-btn">t.me/saYaSupport</a>
+            </div>
+        </div>
+    </div>
+
+    <section id="profilePage" class="profile-page" aria-hidden="true">
+        <div class="profile-layout">
+            <aside class="profile-sidebar">
+                <div class="profile-user">
+                    <div class="profile-avatar"></div>
+                    <div class="profile-identity">
+                        <div class="profile-label-row">
+                            <span class="profile-label">Account</span>
+                            <span class="profile-role profile-role--user" id="profileRole">USER</span>
+                        </div>
+                        <span class="profile-name" id="profileUsername">User</span>
+                    </div>
+                </div>
+                <nav class="profile-nav">
+                    <button class="profile-nav-item is-active" data-section="profile">Profile</button>
+                    <button class="profile-nav-item" data-section="orders-current">Current orders</button>
+                    <button class="profile-nav-item" data-section="balance">Balance</button>
+                    <button class="profile-nav-item" data-section="personal">Personal data</button>
+                    <button class="profile-nav-item" data-section="security">Security</button>
+                    <button class="profile-nav-item" data-section="orders-history">Order history</button>
+                    <button class="profile-nav-item" data-section="cart">Cart</button>
+                    <button class="profile-nav-item" data-section="contacts">Contacts</button>
+                    <button class="profile-nav-item" data-section="favorites">Bookmarks</button>
+                    <div class="profile-nav-divider" aria-hidden="true"></div>
+                    <button class="profile-nav-item profile-nav-item--back" data-section="back">Back to shop</button>
+                    <button class="profile-nav-item profile-nav-item--logout" data-section="logout"
+                        id="logoutBtn">Log out</button>
+                </nav>
+            </aside>
+            <section class="profile-content">
+                <header class="profile-header">
+                    <h2 id="profileSectionTitle">Profile</h2>
+                </header>
+                <div class="profile-section profile-section--main" id="profileSectionMain">
+                    <div class="profile-section-block" id="profileSectionProfile">
+                        <p class="profile-placeholder">
+                            Here will appear the content of the selected section. For now it is only an empty echo of
+                            your identity.
+                        </p>
+                    </div>
+
+                    <div class="profile-section-divider"></div>
+
+                    <div class="profile-section-block profile-section-block--personal" id="profileSectionPersonal"
+                        hidden>
+                        <h3 class="profile-subtitle">Personal data</h3>
+
+                        <div class="profile-section-divider"></div>
+
+                        <div class="personal-grid">
+                            <div class="personal-card personal-card--avatar">
+                                <h4>Avatar</h4>
+                                <p class="personal-hint">Change your avatar locally on this device.</p>
+                                <label class="file-input-label">
+                                    <input type="file" id="avatarUpload" accept="image/*">
+                                    <span>Upload new avatar</span>
+                                </label>
+                            </div>
+
+                            <div class="personal-card">
+                                <h4>Contact info</h4>
+                                <p class="personal-hint">Update your email and phone. Password confirmation is
+                                    required.</p>
+                                <form id="personalContactForm" class="personal-form">
+                                    <div class="personal-field">
+                                        <label for="personalEmail">Email</label>
+                                        <input type="email" id="personalEmail" name="email"
+                                            placeholder="your@email.com"
+                                            required>
+                                    </div>
+                                    <div class="personal-field">
+                                        <label for="personalPhone">Phone</label>
+                                        <input type="tel" id="personalPhone" name="phone"
+                                            placeholder="+0 000 000 00 00">
+                                    </div>
+                                    <div class="personal-field">
+                                        <label for="personalPasswordConfirm">Current password</label>
+                                        <input type="password" id="personalPasswordConfirm" name="currentPassword"
+                                            placeholder="Confirm with your password" required>
+                                    </div>
+                                    <button type="submit" class="auth-submit personal-submit">Save changes</button>
+                                </form>
+                            </div>
+
+                            <div class="personal-card">
+                                <h4>Password</h4>
+                                <p class="personal-hint">Change your password with old password confirmation.</p>
+                                <form id="personalPasswordForm" class="personal-form">
+                                    <div class="personal-field">
+                                        <label for="currentPassword">Current password</label>
+                                        <input type="password" id="currentPassword" name="currentPassword"
+                                            placeholder="Enter current password" required>
+                                    </div>
+                                    <div class="personal-field">
+                                        <label for="newPassword">New password</label>
+                                        <input type="password" id="newPassword" name="newPassword"
+                                            placeholder="Enter new password" required>
+                                    </div>
+                                    <button type="submit" class="auth-submit personal-submit">Change password</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </section>
 
     <div class="modal" id="aboutModal">
         <div class="modal-content">
@@ -393,7 +513,7 @@
         </div>
     </div>
 
-    <script type="module" src="dist/script/types/index.js"></script>
+    <script type="module" src="/script/types/index.ts"></script>
 </body>
 
 </html>
